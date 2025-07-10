@@ -1,29 +1,29 @@
 import streamlit as st
 import pandas as pd
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 
-# --- Autenticação via JSON no repositório ---
-SVC_JSON   = "amigos-tennis-sheet-a5fb8ee01c0b.json"  # Nome do seu arquivo JSON
-SHEET_KEY  = "1t23lrxm8H5f9bdR1q4QJ_Ow0tw8e5DS0vTy48iiKN74"  # ID da planilha
+# --- Autenticação via JSON no repositório (sem usar oauth2client) ---
+SVC_JSON  = "amigos-tennis-sheet-a5fb8ee01c0b.json"   # nome do seu JSON
+SHEET_KEY = "1t23lrxm8H5f9bdR1q4QJ_Ow0tw8e5DS0vTy48iiKN74"  # ID da planilha
 
-scope   = ["https://www.googleapis.com/auth/spreadsheets"]
-creds   = ServiceAccountCredentials.from_json_keyfile_name(SVC_JSON, scope)
-client  = gspread.authorize(creds)
-sheet   = client.open_by_key(SHEET_KEY).sheet1
+scopes = ["https://www.googleapis.com/auth/spreadsheets"]
+creds  = Credentials.from_service_account_file(SVC_JSON, scopes=scopes)
+client = gspread.authorize(creds)
+sheet  = client.open_by_key(SHEET_KEY).sheet1
 
 @st.cache_data(ttl=300)
 def load_matches():
     return pd.DataFrame(sheet.get_all_records())
 
 def update_match(match_id, data):
-    cell = sheet.find(str(match_id), in_column=1)
-    row = cell.row
+    cell    = sheet.find(str(match_id), in_column=1)
+    row_idx = cell.row
     headers = sheet.row_values(1)
     for k, v in data.items():
         if k in headers:
-            col = headers.index(k) + 1
-            sheet.update_cell(row, col, v)
+            col_idx = headers.index(k) + 1
+            sheet.update_cell(row_idx, col_idx, v)
 
 st.title("Torneio - Amigos do Tennis (Sheets)")
 df = load_matches()
@@ -63,7 +63,11 @@ elif menu=="Jogos":
         st.dataframe(df[df.played==0][["player1","player2"]])
     if st.checkbox("Disputados", True):
         d = df[df.played==1].copy()
-        d["Placar"]=d.apply(lambda r: f"{r.set1_p1}–{r.set1_p2}, {r.set2_p1}–{r.set2_p2}" + (f", {r.set3_p1}–{r.set3_p2}" if r.set3_p1!="" else ""), axis=1)
+        d["Placar"]=d.apply(
+            lambda r: f"{r.set1_p1}–{r.set1_p2}, {r.set2_p1}–{r.set2_p2}"
+                      + (f", {r.set3_p1}–{r.set3_p2}" if r.set3_p1!="" else ""),
+            axis=1
+        )
         st.dataframe(d[["player1","player2","Placar"]])
 
 else:
