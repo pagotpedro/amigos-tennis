@@ -3,21 +3,14 @@ import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-# --- CONFIGURAÇÃO DIRETA (sem Secrets) ---
+# --- Autenticação via JSON no repositório ---
+SVC_JSON   = "amigos-tennis-sheet-a5fb8ee01c0b.json"  # Nome do seu arquivo JSON
+SHEET_KEY  = "1t23lrxm8H5f9bdR1q4QJ_Ow0tw8e5DS0vTy48iiKN74"  # ID da planilha
 
-# 1) Carrega credenciais diretamente do JSON que está no repositório
-SVC_JSON = "amigos-tennis-sheet-a5fb8ee01c0b.json"
-
-# 2) Cole aqui o ID da sua planilha
-SHEET_KEY = "1t23lrxm8H5f9bdR1q4QJ_Ow0tw8e5DS0vTy48iiKN74"
-
-# 3) Autenticação
-scope = ["https://www.googleapis.com/auth/spreadsheets"]
-creds = ServiceAccountCredentials.from_json_keyfile_name(SVC_JSON, scope)
-client = gspread.authorize(creds)
-
-# 4) Abre a aba 1 da planilha
-sheet = client.open_by_key(SHEET_KEY).sheet1
+scope   = ["https://www.googleapis.com/auth/spreadsheets"]
+creds   = ServiceAccountCredentials.from_json_keyfile_name(SVC_JSON, scope)
+client  = gspread.authorize(creds)
+sheet   = client.open_by_key(SHEET_KEY).sheet1
 
 @st.cache_data(ttl=300)
 def load_matches():
