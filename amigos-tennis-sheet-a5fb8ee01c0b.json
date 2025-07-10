@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "amigos-tennis-sheet",
+  "private_key_id": "a5fb8ee01c0bd1a85af9b5a32f8ecb3711051a1e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDh/dwLgf4z7sbN\ncaMF3ffiqc3nNsT8CzZ4WUJ7pW0VeO1wLhr+rrfcprz65QA2vCXGEQLQFItzkIB8\n+hLJmjry1ovykaBZUSRJPS1eiuMGPKh3iTA22CJPC5XHfMWDe44m7ZGgUubaeTPE\nZFsMtzkh6p9/od7jY1pndB6M8FMEZ4cb5y1hbuGcY2yBW1KzeIkfbB+dBV/x7n0N\nBkEk9e7w+ZgqzR6zUsKvsLu/gp/CcjD8FleBDHI2OEBcBaIP98X4Bp7k+WfL9dfP\ngKOfhhgi/PiqkLbR/uBy7DxhQcwr+2fibcxzBDorrZnK0pIbzJFEYOjXLiAraeMY\nD8v6bITzAgMBAAECggEAJCvsyiQUBZ3vULd36hrSxVh7w3P0aDR8kxto/79voU3f\nZeLgoT5ijBJdZyRmOgc4CJF1IMxZBwtBoD9VPdLOIqDieistk341pPSszALGPvD7\nNKl5qnLtCDfeJmA7K5tdb6+mF8I31GTX5f77b81Ce2zr+z1zyR4q5yoiha57AIDV\n5JUiRoQZzNVYVonn7zqTONJQAHFujmyyr9wr0viry27IDNHothaNTyz1U0urEe3u\n9YQdahduVhOfm85n0BcIB6/zX0y5cEfk7UhQm1KgmYR/yYQIS+xKmc6biVCUVa4j\nA8m//sblG+yJn9agfPmIN0lyFwvt9HDNwfQGAWUhcQKBgQD1mUlbWn1v+hoA+359\njsEOoB6hezuNB0D07mwvQi50Hnxz5NcC+f8VXpMVsIJ3LiMxZ1UAEtpnOpdYoCW8\nhw/WyIS0cSe3ArEuuK/MxEJu8pM9T6slUNsdxtsm2J3sKreZcQd9I3Zqca07P7sj\nQsD3YvCGZzwHR5U8P5wo2yYl+wKBgQDrj/91xMOSMyzxgDotncTqJgIV7cEo/x1o\n1cO8osToHP/Z30x9KjfDqYU2DMN+vzAjDg/53WmmwW6KgSn9w9TfAPnOz86ldlDT\nTBopo4zYXEIZUFeJOV/uKM23z/suHnETsq44Y8e8P2haiB/P7JwGaff6O3l6zUMQ\nKK0akO8DaQKBgQDuusmrmxJDPoD4Y35Y3eKbLNmZbgg81cg2TWurpFEzXk7q+I5n\nvkpNo1ilxKWM47Qh2aeuIqVZooJrC4Ci+UZUKSWVoEhShLNmDvATwtIwtmqZNk/O\nPgI/t4RfBkC7x+ofpNb6tPXuEgGpjhGB/OlFj07t1ntrOBHANrS8ogk68QKBgB6x\nLWzPzVeQOWvh9DKbWtvTRfRLfR51VwSgzZcXciZ4GNHvaUzpokhpHwUy1on+KSx4\nGZbJxYlHrLp5J9p7mJHR07qhkuA2MUPGp6YDPEe4hZg8wpsLkbc7M8qeW7DfoIYb\ngt2wCoc5j8Qz9kkmIBIp3niJJUPd2L4TPrK2bZ35AoGASCBNEB0dEi3YIXJoDiSf\nopi1lBmqcLz/96Rkg72B1MkfAkXD/MiP2jr+0dG5UL4OGoNAo1cJ1N7yw06hc8jl\nM07WmudcNaTixNpdv7Z2MlYuYL4pEfhGw6PUx4RdUd1OIiOPymRuBi9j6JkGin9u\nORBTZ3SsX4VwQ0dmIWAe6m8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "streamlit-service-account@amigos-tennis-sheet.iam.gserviceaccount.com",
+  "client_id": "101238479030575595931",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/streamlit-service-account%40amigos-tennis-sheet.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
